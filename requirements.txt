@@ -1,0 +1,4 @@
+matplotlib
+fpdf
+python-barcode
+Pillow
