@@ -205,7 +205,8 @@ class FacturacionTab(ttk.Frame):
         if venta_id:
             messagebox.showinfo("Éxito", f"Venta #{venta_id} generada correctamente.")
             
-            self.last_sale_info = {
+            # Guardamos la info temporalmente antes de limpiar
+            venta_info = {
                 "venta_id": venta_id,
                 "cliente": cliente_sel.split(" - ")[1],
                 "vendedor": self.app.username,
@@ -218,7 +219,10 @@ class FacturacionTab(ttk.Frame):
                               self.tree_carrito.item(item, 'values')[4]) for item in items_carrito]
             }
             
-            self.limpiar_carrito()
+            self.limpiar_carrito() # Esto borra self.last_sale_info
+            
+            # Restauramos la info para permitir imprimir el PDF
+            self.last_sale_info = venta_info
             self.cargar_comboboxes()
             self.pdf_button.config(state="normal")
 

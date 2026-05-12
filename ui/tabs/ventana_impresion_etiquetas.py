@@ -32,7 +32,7 @@ class LabelPrintWindow(tk.Toplevel):
         canvas.configure(yscrollcommand=scrollbar.set)
 
         for i, prod in enumerate(self.productos):
-            prod_id, nombre, sku, _, precio, _, _, _ = prod
+            prod_id, nombre, sku, categoria, precio, stock, minimo = prod
             
             row_frame = ttk.Frame(scrollable_frame)
             row_frame.pack(fill="x", pady=5)

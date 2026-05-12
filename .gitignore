@@ -11,3 +11,4 @@ venv/
 .vscode/
 .idea/
 temp_barcode_*
+*.pdf

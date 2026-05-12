@@ -109,7 +109,7 @@ def generar_etiquetas_pdf(productos_cantidades: list, filepath: str) -> bool:
                 pdf.set_xy(x + 2, y + 7)
                 pdf.cell(label_width - 4, 6, f"${float(precio):.2f}", 0, 1)
 
-                pdf.image(barcode_path, x + 2, y + 14, width=label_width - 5)
+                pdf.image(barcode_path, x + 2, y + 14, w=label_width - 5)
                 
                 x += label_width + gap_x
                 if x + label_width > 210: # Salto de línea
